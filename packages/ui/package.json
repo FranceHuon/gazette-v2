@@ -11,7 +11,9 @@
     "./icons": "./src/icons/index.ts"
   },
   "scripts": {
-    "registry": "pnpm dlx shadcn@latest"
+    "registry": "pnpm dlx shadcn@latest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@gazette-v2/openapi-generator": "workspace:*",
@@ -38,7 +40,11 @@
     "zod": "4.1.13"
   },
   "devDependencies": {
+    "@storybook/react": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
     "@tailwindcss/typography": "^0.5.16",
+    "eslint-plugin-storybook": "^10.1.11",
+    "storybook": "^10.1.11",
     "typescript": "^5.9.2"
   }
 }
