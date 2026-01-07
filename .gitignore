@@ -48,3 +48,5 @@ temp
 
 ./packages/openapi-generator/client
 openapi-ts-error-*
+*storybook.log
+storybook-static

@@ -8,14 +8,16 @@ export default function MainLayout() {
       <Header>
         <Navigation
           brand={(
-            <Link to="/" className="font-bold hover:underline">
-              Lonestone
+            <Link to="/" className="font-heading text-xl hover:underline">
+              Gazette V2
             </Link>
           )}
           sections={[
             {
               items: [
-                { to: '/posts', label: 'Posts' },
+                { to: '/articles', label: 'Articles' },
+                { to: '/medias', label: 'Médias' },
+                { to: '/settings', label: 'Paramètres' },
               ],
             },
           ]}
