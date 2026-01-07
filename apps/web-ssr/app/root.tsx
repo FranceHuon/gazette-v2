@@ -5,7 +5,11 @@ import { HydrationBoundary, QueryClientProvider } from '@tanstack/react-query'
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteLoaderData } from 'react-router'
 import { useDehydratedState } from '@/hooks/use-dehydrated-state'
 import { queryClient } from '@/lib/query-client'
-import '@fontsource/source-sans-pro'
+import '@fontsource/bebas-neue'
+import '@fontsource/poppins/400.css'
+import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/600.css'
+import '@fontsource/poppins/700.css'
 import '@gazette-v2/ui/globals.css'
 
 client.setConfig({
