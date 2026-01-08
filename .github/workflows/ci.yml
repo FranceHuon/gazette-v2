@@ -166,3 +166,36 @@ jobs:
           BETTER_AUTH_SECRET: test_secret
           TRUSTED_ORIGINS: '*'
           NODE_ENV: test
+
+  lighthouse:
+    name: 🚨 Lighthouse Performance Report
+    needs: [build, setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📂 Restore built workspace
+        uses: actions/cache@v3
+        with:
+          path: .
+          key: workspace-built-${{ github.sha }}
+
+      - name: 🔧 Setup Node.js and pnpm
+        uses: ./.github/actions/setup-node-pnpm
+        with:
+          node-version: ${{ needs.setup.outputs.node-version }}
+          pnpm-version: ${{ needs.setup.outputs.pnpm-version }}
+
+      - name: 🌐 Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.13.x
+
+      - name: 🚀 Run Lighthouse CI
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: 📊 Upload Lighthouse Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/
+          retention-days: 30
