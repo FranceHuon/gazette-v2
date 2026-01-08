@@ -1,8 +1,7 @@
 import { Badge } from '@gazette-v2/ui/components/primitives/badge'
 import { Button } from '@gazette-v2/ui/components/primitives/button'
-import { Card } from '@gazette-v2/ui/components/primitives/card'
 import { Input } from '@gazette-v2/ui/components/primitives/input'
-import { Newspaper, Radio, Rss } from 'lucide-react'
+import { Newspaper, Rss } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export default function HomePage() {
@@ -10,22 +9,23 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="border-b bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge className="mb-4" variant="secondary">
-              <Radio className="mr-1 size-3" />
-              {t('home.hero.badge')}
-            </Badge>
-            <h1 className="mb-6 text-5xl font-semibold uppercase text-brand-red md:text-6xl lg:text-7xl">
+      <section className="relative overflow-hidden py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-8 inline-block">
+              <Badge className="border-brand-red/20 bg-brand-red/5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-red">
+                {t('home.hero.badge')}
+              </Badge>
+            </div>
+            <h1 className="mb-8 text-6xl font-bold uppercase leading-tight tracking-tight text-foreground md:text-7xl lg:text-8xl">
               {t('home.hero.title')}
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+            <p className="mx-auto mb-12 max-w-2xl text-xl text-muted-foreground md:text-2xl">
               {t('home.hero.subtitle')}
             </p>
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Button size="lg">
-                <Rss className="mr-2 size-4" />
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Button size="lg" className="px-8 py-6 text-base font-bold uppercase tracking-wide">
+                <Rss className="mr-2 size-5" />
                 {t('home.hero.cta')}
               </Button>
             </div>
@@ -34,53 +34,65 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="border-b py-12">
+      <section className="bg-muted/30 py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <Card className="p-6 text-center">
-              <div className="mb-2 text-3xl font-bold text-brand-red">1,234</div>
-              <div className="text-sm text-muted-foreground">{t('home.stats.todayArticles')}</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="mb-2 text-3xl font-bold text-brand-red">150+</div>
-              <div className="text-sm text-muted-foreground">{t('home.stats.mediaSources')}</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="mb-2 text-3xl font-bold text-brand-red">50K+</div>
-              <div className="text-sm text-muted-foreground">{t('home.stats.activeReaders')}</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="mb-2 text-3xl font-bold text-brand-red">24/7</div>
-              <div className="text-sm text-muted-foreground">{t('home.stats.updates')}</div>
-            </Card>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="group relative">
+              <div className="mb-4">
+                <Badge className="border-brand-red bg-brand-red px-3 py-1 text-sm font-bold text-white">01</Badge>
+              </div>
+              <div className="mb-2 text-5xl font-bold text-foreground">1,234</div>
+              <div className="text-sm font-medium uppercase tracking-wide text-muted-foreground">{t('home.stats.todayArticles')}</div>
+            </div>
+            <div className="group relative">
+              <div className="mb-4">
+                <Badge className="border-brand-red bg-brand-red px-3 py-1 text-sm font-bold text-white">02</Badge>
+              </div>
+              <div className="mb-2 text-5xl font-bold text-foreground">150+</div>
+              <div className="text-sm font-medium uppercase tracking-wide text-muted-foreground">{t('home.stats.mediaSources')}</div>
+            </div>
+            <div className="group relative">
+              <div className="mb-4">
+                <Badge className="border-brand-red bg-brand-red px-3 py-1 text-sm font-bold text-white">03</Badge>
+              </div>
+              <div className="mb-2 text-5xl font-bold text-foreground">50K+</div>
+              <div className="text-sm font-medium uppercase tracking-wide text-muted-foreground">{t('home.stats.activeReaders')}</div>
+            </div>
+            <div className="group relative">
+              <div className="mb-4">
+                <Badge className="border-brand-red bg-brand-red px-3 py-1 text-sm font-bold text-white">04</Badge>
+              </div>
+              <div className="mb-2 text-5xl font-bold text-foreground">24/7</div>
+              <div className="text-sm font-medium uppercase tracking-wide text-muted-foreground">{t('home.stats.updates')}</div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="border-t py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <Card className="overflow-hidden bg-gradient-to-r from-brand-red/10 to-brand-red/5">
-            <div className="p-8 md:p-12">
-              <div className="mx-auto max-w-2xl text-center">
-                <Newspaper className="mx-auto mb-4 size-12 text-brand-red" />
-                <h2 className="mb-4 text-3xl font-semibold uppercase text-brand-red">
-                  {t('home.cta.title')}
-                </h2>
-                <p className="mb-6 text-muted-foreground">
-                  {t('home.cta.description')}
-                </p>
-                <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                  <Input
-                    type="email"
-                    placeholder={t('home.cta.emailPlaceholder')}
-                    className="max-w-xs"
-                  />
-                  <Button>{t('home.cta.button')}</Button>
-                </div>
-              </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-8">
+              <Newspaper className="mx-auto mb-6 size-16 text-brand-red" />
             </div>
-          </Card>
+            <h2 className="mb-6 text-5xl font-bold uppercase leading-tight text-foreground md:text-6xl">
+              {t('home.cta.title')}
+            </h2>
+            <p className="mb-12 text-lg text-muted-foreground md:text-xl">
+              {t('home.cta.description')}
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Input
+                type="email"
+                placeholder={t('home.cta.emailPlaceholder')}
+                className="h-12 max-w-sm border-2 px-6 text-base"
+              />
+              <Button size="lg" className="h-12 px-8 text-base font-bold uppercase tracking-wide">
+                {t('home.cta.button')}
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
