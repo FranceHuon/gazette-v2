@@ -8,8 +8,8 @@ export default function MainLayout() {
       <Header>
         <Navigation
           brand={(
-            <Link to="/" className="font-heading text-xl hover:underline">
-              Gazette V2
+            <Link to="/" className="text-3xl font-bold uppercase tracking-wider text-brand-red hover:text-red-600">
+              Gazette
             </Link>
           )}
           sections={[

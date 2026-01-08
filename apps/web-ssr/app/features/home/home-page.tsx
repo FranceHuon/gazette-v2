@@ -102,15 +102,15 @@ export default function HomePage() {
 export function meta() {
   return [
     {
-      title: 'Gazette V2 - Votre agrégateur de médias',
+      title: 'Gazette',
     },
     {
       property: 'og:title',
-      content: 'Gazette V2 - Votre agrégateur de médias',
+      content: 'Gazette - Votre agrégateur de médias',
     },
     {
       name: 'description',
-      content: 'Suivez toute l\'actualité en un seul endroit. Gazette V2 regroupe vos sources d\'information préférées en temps réel.',
+      content: 'Suivez toute l\'actualité en un seul endroit. Gazette regroupe vos sources d\'information préférées en temps réel.',
     },
   ]
 }
