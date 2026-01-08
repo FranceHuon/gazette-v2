@@ -1,0 +1,41 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "search": "Rechercher"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "articles": "Articles",
+    "medias": "Médias",
+    "settings": "Paramètres"
+  },
+  "home": {
+    "hero": {
+      "badge": "Agrégateur de médias",
+      "title": "Toute l'actualité en un seul endroit",
+      "subtitle": "Gazette regroupe vos sources d'information préférées.",
+      "cta": "S'abonner"
+    },
+    "stats": {
+      "todayArticles": "Articles aujourd'hui",
+      "mediaSources": "Sources médias",
+      "activeReaders": "Lecteurs actifs",
+      "updates": "Actualisation"
+    },
+    "cta": {
+      "title": "Restez informé",
+      "description": "Rejoignez des milliers de lecteurs qui font confiance à Gazette pour suivre l'actualité qui les intéresse vraiment.",
+      "emailPlaceholder": "Votre email",
+      "button": "S'inscrire"
+    },
+    "meta": {
+      "title": "Gazette V2 - Votre agrégateur de médias",
+      "description": "Suivez toute l'actualité en un seul endroit. Gazette V2 regroupe vos sources d'information préférées en temps réel."
+    }
+  }
+}
